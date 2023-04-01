@@ -25,6 +25,13 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "500m"
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities:
+              drop:
+                - ALL
+            readOnlyRootFilesystem: true
           ports:
             - containerPort: 3000
           env:
@@ -40,3 +47,31 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: status.podIP
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  namespace: development
+  labels:
+    app: explorecalifornia.com
+  name: explorecalifornia.com
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: explorecalifornia.com
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: explorecalifornia.com
+    spec:
+      containers:
+        - image: zideano/develop:v1.0.0
+          name: explorecalifornia-com-4r6vm
+          resources: {}
+status: {}
