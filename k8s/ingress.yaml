@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   creationTimestamp: null
   name: explorecalifornia
+  namespace: development
 spec:
   rules:
     - host: explorecalifornia.com
