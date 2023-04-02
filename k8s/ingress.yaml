@@ -12,7 +12,7 @@ spec:
               service:
                 name: explore-california-service
                 port:
-                  number: 80
+                  number: 8085
             path: /
             pathType: Exact
 status:
