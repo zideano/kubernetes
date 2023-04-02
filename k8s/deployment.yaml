@@ -59,7 +59,7 @@ metadata:
     app: explorecalifornia.com
   name: explore-california-deployment
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: explorecalifornia.com
