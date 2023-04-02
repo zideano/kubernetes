@@ -73,5 +73,7 @@ spec:
       containers:
         - image: zideano/develop:v1.0.0
           name: explorecalifornia-com-4r6vm
+          ports:
+            - containerPort: 8085
           resources: {}
 status: {}
